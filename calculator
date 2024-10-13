@@ -1,0 +1,42 @@
+from tkinter import *
+
+# creating a gui window
+window = Tk()
+window.geometry('800x800')
+window.title('Hair Growth Calculator')
+window.config(bg='#88cffa')
+
+hair = StringVar()
+time = StringVar()
+output = StringVar()
+
+# defining a hair calculator function
+def hair_calc():
+    try:
+        initial_length = float(hair.get())
+        years = float(time.get())
+        hair_growth_rate_per_year = 15  # Example: hair grows 15 cm/year
+        
+        new_hair = hair_growth_rate_per_year * years  # Total new growth
+        result = initial_length + new_hair  # Total length
+        output.set(f"{result:.2f} cm")  # Format result to 2 decimal places
+    except ValueError:
+        output.set("Please enter valid numbers.")
+
+# asking about the hair length now
+Label(window, text='Your hair length now (cm): ', font='arial 18', bg='#88cffa').grid(row=0, column=0)
+Entry(window, font='arial 18', textvariable=hair, bg='antiquewhite2').grid(row=0, column=1)
+
+# asking about the period of time over which the hair will grow
+Label(window, text='Type the period of time (years): ', font='arial 18', bg='#88cffa').grid(row=1, column=0)
+Entry(window, font='arial 18', textvariable=time, bg='antiquewhite2').grid(row=1, column=1)
+
+# displaying the result
+Label(window, text='Result (cm): ', font='arial 18', bg='#88cffa').grid(row=2, column=0)
+Label(window, font='arial 18', textvariable=output, bg='antiquewhite2').grid(row=2, column=1)
+
+button = Button(window, text="Calculate", command=hair_calc)
+button.grid(row=3, column=1)
+
+window.mainloop()
+
