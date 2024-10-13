@@ -22,4 +22,40 @@ A simple GUI application to calculate potential hair growth over a specified per
 
    ```bash
    python hair_growth_calculator.py
+   ```
 
+## Usage
+
+1. Enter your current hair length in the first input field.
+2. Enter the number of years you wish to calculate hair growth for.
+3. Click the "Calculate" button to view the expected hair length.
+
+## Example
+
+- **Current Hair Length**: `30` cm
+- **Years**: `5`
+- **Expected Result**: `105 cm` (assuming an average growth rate of 15 cm/year).
+
+## Code Overview
+
+The core function of the application is `hair_calc`, which:
+
+- Retrieves user input for hair length and years.
+- Calculates the total hair length based on a predefined growth rate (15 cm/year).
+- Displays the result in the GUI.
+
+## Error Handling
+
+The application includes basic error handling to ensure users enter valid numeric inputs. If invalid input is detected, an error message will be displayed.
+
+## License
+
+This project is open-source and available under the MIT License.
+
+## Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue for any suggestions or improvements.
+
+## Acknowledgements
+
+- Thanks to the Python and Tkinter communities for providing resources and documentation.
